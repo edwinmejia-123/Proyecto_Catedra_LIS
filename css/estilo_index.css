@@ -1,0 +1,82 @@
+body {
+    font-family: 'Poppins-Light';
+}
+
+
+nav #nav-principal li a {
+    padding: 0.5rem 1rem;
+    transition: all 0.2s linear;
+    border-radius: 5px;
+}
+
+nav #nav-principal li a {
+    font-size: 0.8em;
+}
+
+nav #nav-principal li a:hover {
+    color: white;
+    background: steelblue;
+}
+
+.breadcrumb {
+    background-color: #FFFF;
+}
+
+.separador .breadcrumb-item+ .breadcrumb-item::before {
+    content: ">";
+}
+
+.tema-index {
+    font-family: 'Montserrat-Bold';
+}
+
+.titulo-contact {
+    color: white;
+    font-family: 'Montserrat-Bold';
+    font-size: 50px;
+    margin-top: 115px;
+}
+
+.titulo-historia, .titulo-mision {
+    font-family: 'Poppins-Bold';
+}
+
+.img-carta {
+    width: 100%;
+    height: 275px;
+    /* background-color: red; */
+    background-image: url('../img/bg-01.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.tarjeta-historia, .img-tarjeta-mision {
+    width: 100%;
+}
+
+.img-tarjeta-historia {
+    height: 275px;
+}
+
+.img-producto-carrito {
+    width: 100px;
+}
+
+.img-producto-carrito img {
+    width: 100%;
+}
+
+.footer{
+    background-color: #222831;
+    color: white;
+}
+
+#footer-nav ul li a {
+    color: white;
+
+}
+
+.footer-text{
+    color: steelblue;
+}
