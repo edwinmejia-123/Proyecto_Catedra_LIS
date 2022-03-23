@@ -5,10 +5,14 @@ $(".enlace").on("click", function () {
   console.log(id);
   var modal_imagen = "";
   var img;
-  titulo = document.getElementById(id).getElementsByClassName("titulo").item(0)
-    .textContent;
-  precio = document.getElementById(id).getElementsByClassName("precio").item(0)
-    .textContent;
+  titulo = document
+    .getElementById(id)
+    .getElementsByClassName("titulo")
+    .item(0).textContent;
+  precio = document
+    .getElementById(id)
+    .getElementsByClassName("descripcion")
+    .item(0).textContent;
   img = document
     .getElementById(id)
     .getElementsByClassName("imagen")
