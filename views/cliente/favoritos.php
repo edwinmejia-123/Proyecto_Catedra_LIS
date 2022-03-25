@@ -1,44 +1,20 @@
 <?php
- session_start();
-<<<<<<< Updated upstream:index.php
- include('config/conexion2.php');
+require 'conexion2.php';
 ?>
-=======
-require '../php/conexion.php';
- if ($_SESSION['tipo']== '1') {
-   ?>
->>>>>>> Stashed changes:views/cliente/favoritos.html
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/imagen.css" />
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/font-icon.js"></script>
-    <title>Clothing Store</title>
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
     <link href="css/album.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/estilo_index.css" />
     <link rel="stylesheet" href="css/style-slider.css" />
     <link rel="stylesheet" href="css/fonts.css" />
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/font-icon.js"></script>
+    <title>Clothing Store | Contacto</title>
   </head>
   <body>
     <!-- MENU -->
@@ -79,7 +55,7 @@ require '../php/conexion.php';
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="favoritos.html"
+            <a class="nav-link" href="carrito-detalle.html"
               ><i class="far fa-heart"></i> Favoritos</a
             >
           </li>
@@ -128,16 +104,13 @@ require '../php/conexion.php';
         </form>
       </div>
     </nav>
-<!-- FIN MENU -->
-    <!-- Slogan -->
-    <header>
-      <div class="img-carta">
-        <div class="d-flex justify-content-center text-center">
-          <h2 class="titulo-contact">Comparte el mejor momento entre amigos</h2>
-        </div>
+    <!-- FIN MENU -->
+    <div class="img-carta">
+      <div class="d-flex justify-content-center">
+        <h2 class="titulo-contact">Mis favoritos</h2>
       </div>
-    </header>
-    <!--MODAL-->
+    </div>
+    <!-- MODAL -->
     <div
       class="modal fade bd-example-modal-xl"
       tabindex="-1"
@@ -242,164 +215,58 @@ require '../php/conexion.php';
         </div>
       </div>
     </div>
-    <!-- CONTENIDO DE INDEX -->
+    <!-- FIN MODAL -->
+    <!-- Contenido de la pagina -->
     <div class="container py-5">
       <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb separador">
           <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-          <!-- <li class="breadcrumb-item active" aria-current="page">Library</li> -->
+          <li class="breadcrumb-item active" aria-current="page">
+            Favoritos
+          </li>
         </ol>
       </nav>
-        <!-- Esto es un carousell -->
-
-        <?php  
-                $query = "SELECT DISTINCT nombre_restaurante,descripcion,foto FROM restaurante T1 INNER JOIN foto_restaurante T2 ON T1.id_restaurante = T2.id_restaurante LIMIT 3";  
+      <br /><br />
+      <!-- INICIO ROW -->
+      <div class="row">
+        <div class="col-md-1"></div>
+        <!-- INICIO COLUMNA DE 10 -->
+        <div class="col-md-10">
+          <!-- INICIO DE CARD -->
+                    <?php  
+                $query = "SELECT t2.nombre_restaurante,t2.descripcion,t3.foto, t1.id_restaurante, round(AVG(puntaje),2) AS puntos from comentarios t1 INNER JOIN restaurante t2 ON t1.id_restaurante = t2.id_restaurante INNER JOIN foto_restaurante t3 ON t1.id_restaurante = t3.id_restaurante GROUP BY id_restaurante ORDER BY AVG(puntaje) DESC LIMIT 5";  
                 $result = mysqli_query($conexion, $query);  
                 if(mysqli_num_rows($result) > 0)  
                 {  
                      while($row = mysqli_fetch_array($result))  
                      {  
                 ?>  
-             <div>
-        <h3 class="tema-index">MAS POPULARES</h3>
-      </div>
-      <hr></hr>
-      <div class="row">
-        <div class="col-md-4" id="1">
-          <div class="card mb-4 shadow-sm" >
-            <img
-              src="<?php echo $row["foto"]; ?>"
-              class="card-img-top imagen"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title titulo"><?php echo $row["nombre_restaurante"]; ?></h5>
-              <p class="card-text precio"><?php echo $row["descripcion"]; ?></p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button
-                    type="button"
-                    class="btn btn-outline-warning btn-sm enlace"
-                    value="1"
-                    data-toggle="modal"
-                    data-target=".bd-example-modal-xl"
-                  >
-                    View
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <?php  
-                     }  
-                }  
-            ?>
-       
-
-        <?php  
-                $query1 = "SELECT * FROM tipo_restaurante LIMIT 3";  
-                $result1 = mysqli_query($conexion, $query1);  
-                if(mysqli_num_rows($result1) > 0)  
-                {  
-                     while($row1 = mysqli_fetch_array($result1))  
-                     {  
-                ?>  
-                <!-- Aqui va un boton -->
-        <hr>
-        <!-- Esto es un carousell -->
-        <div>
-            <h3 class="tema-index">CATEGORIAS</h3>
-        </div>
-        <div class="row">
-        <div class="col-md-4" id="4">
-          <div class="card mb-4 shadow-sm">
-            <img
-              src="img/product-14.jpg"
-              class="card-img-top imagen"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title titulo"><?php echo $row1["tipo"]; ?></h5>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button
-                    type="button"
-                    class="btn btn-outline-warning btn-sm enlace"
-                    value="4"
-                    data-toggle="modal"
-                    data-target=".bd-example-modal-xl"
-                  >
-                    View
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <?php  
-                     }  
-                }  
-            ?>
-        
-
-              <?php  
-                $query2 = "SELECT DISTINCT comentarios, foto, puntaje FROM comentarios T1 INNER JOIN cliente T2 ON T1.id_cliente = T2.id_cliente";  
-                $result2 = mysqli_query($conexion, $query2);  
-                if(mysqli_num_rows($result2) > 0)  
-                {  
-                     while($row2 = mysqli_fetch_array($result2))  
-                     {  
-                ?>  
-            <hr>
-      <div>
-        <h3 class="tema-index">COMENTARIOS</h3>
-      </div>
-      <div>
-        <div class="card mb-3" style="max-width: 1500px;">
+          <div class="card mb-3" style="max-width: 1500px">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="<?php echo $row2["foto"]; ?>" class="card-img" alt="..." height="165px">
+                <img
+                  src="<?php echo $row["foto"] ?>"
+                  class="card-img"
+                  alt="..."
+                  height="210px"
+                />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">Puntaje: <?php echo $row2["puntaje"]; ?></h5>
-                  <p class="card-text"><?php echo $row2["comentario"]; ?></p>
-                </div>
-              </div>
-            </div>
-        </div>
-        <?php  
-                     }  
-                }  
-            ?> 
-      <!-- Esto es un carousell -->
-      <?php  
-                $query3 = "SELECT DISTINCT nombre_restaurante,descripcion,foto FROM restaurante T1 INNER JOIN foto_restaurante T2 ON T1.id_restaurante = T2.id_restaurante ORDER BY T1.id_restaurante desc LIMIT 3";  
-                $result3 = mysqli_query($conexion, $query3);  
-                if(mysqli_num_rows($result3) > 0)  
-                {  
-                     while($row3 = mysqli_fetch_array($result3))  
-                     {  
-                ?>  
-      
-      <div>
-        <h3 class="tema-index">AGREGADOS RECIENTEMENTE</h3>
-      </div>
-        <div class="row">
-            <div class="col-md-4" id="7">
-              <div class="card mb-4 shadow-sm">
-                <img
-                  src="<?php echo $row3["foto"]; ?>"
-                  class="card-img-top imagen"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title titulo"><?php echo $row3["nombre_restaurante"]; ?></h5>
-                  <p class="card-text precio"><?php echo $row3["descripcion"]; ?></p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button
+                  <div class="row">
+                    <div class="col-md-10">
+                      <h5 class="card-title mb-0"><?php echo $row["nombre_restaurante"]; ?></h5>
+                      <div class="text-muted"><small><?php echo $row["puntos"]; ?></small></div>
+                    </div>
+                    </div>
+                  </div>
+                  <br />
+                  <p class="card-text"><?php echo $row["descripcion"]; ?>
+                  </p>
+                  <div class="row">
+                      <div class="col-md-10"></div>
+                      <div class="col-md-2">
+                        <button
                         type="button"
                         class="btn btn-outline-warning btn-sm enlace"
                         value="1"
@@ -408,32 +275,25 @@ require '../php/conexion.php';
                       >
                         View
                       </button>
-                    </div>
+                      </div>
                   </div>
                 </div>
               </div>
             </div>
-            <?php  
+          </div>
+          <!-- FIN DE CARD -->
+
+          <?php  
                      }  
                 }  
-            ?> 
-        <div class="img-carta">
-            <div class="d-flex justify-content-center text-center">
-              <h2 class="titulo-contact">Unete a nosotros</h2>
-            </div>
-            
-                <div class="container" id="texto-slider">
-                  <p class="justify-content-center text-center">
-                    <a class="btn btn-outline-warning btn-lg" role="button" href="#"
-                      >Comienza</a
-                    >
-                  </p>
-                </div>
-              
+            ?>
         </div>
-
+        <!-- FIN DE COLUMNA DE 10 -->
+        <div class="col-md-1"></div>
+      </div>
+      <!-- FIN ROW -->
     </div>
-    <script src="js/modal.js"></script>
+    <!-- Fin del contenido de la pagina -->
     <!-- FOOTER -->
     <!-- Page Content -->
     <section class="py-5 footer">
@@ -466,7 +326,7 @@ require '../php/conexion.php';
                     <a class="nav-link" href="index.html">Inicio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="Lista_restaurantes.html"
+                    <a class="nav-link" href="productos.html"
                       >Lista restaurantes</a
                     >
                   </li>
@@ -477,7 +337,7 @@ require '../php/conexion.php';
                     <a class="nav-link" href="contacto.html">Contacto</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">FAQ</a>
+                    <a class="nav-link" href="contacto.html">FAQ</a>
                   </li>
                 </ul>
               </nav>
@@ -494,5 +354,7 @@ require '../php/conexion.php';
         </div>
       </div>
     </section>
+    <!-- Validacion de formulario -->
+    <script src="js/validationform.js"></script>
   </body>
 </html>
