@@ -10,7 +10,6 @@ _El presente repositorio consta de una aplicación web que permite buscar restau
 
 
 ### Pre-requisitos 📋
-
 ```
 -Tener PHP
 -Tener un servidor web (Apache,Nginx,etc)
