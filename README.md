@@ -5,7 +5,7 @@ _El presente repositorio consta de una aplicación web que permite buscar restau
 
 ## Comenzando 🚀
 * [Manual de Usuario]()
-* [Documento](https://docs.google.com/document/d/1OC4dX5Cbqw7U26ufUX4PxL19jHk1ivHcw9Fk901d1_M/edit)
+* [Documento](/DOC/Documento_-_Proyecto_LIS_Primera_Fase.pdf)
 * [Demo de la aplicación]()
 
 
@@ -16,11 +16,13 @@ _El presente repositorio consta de una aplicación web que permite buscar restau
 -Tener un gestor de bases de datos relacional (SQL)
 ```
 ## Construido con 🛠️
-
+* [WAMP](https://www.wampserver.com/en/) - Plataforma de desarrollo web para ~Windows~ que contiene MySQL,Apache y PHP
 * [PHP](https://www.php.net/) - Lenguaje de programación adaptado especialmente al desarrollo web
-* [Visual Studio Code](https://code.visualstudio.com/) - Editor de código gratuito desarrollado por Microsoft.
 * [MySQL](https://www.mysql.com/) - Sistema de gestión de base de datos relacional
+* [Visual Studio Code](https://code.visualstudio.com/) - Editor de código gratuito desarrollado por Microsoft.
 * [Bootstrap](https://getbootstrap.com/) - Biblioteca multiplataforma para diseño de sitios y aplicaciones web
+* [Git](https://git-scm.com/)/[Github](https://github.com/) - Software de control de versiones / Sitio para alojar proyectos hechos con git
+* [Trello](https://trello.com/es) - Aplicación de gestión de proyectos basado en Kanban 
 * [Composer](https://getcomposer.org/) - Sistema de gestión de paquetes para programar en PHP
 
 ## Autores ✒️
@@ -34,6 +36,8 @@ _El presente repositorio consta de una aplicación web que permite buscar restau
 ## Licencia 📄🔒 
 
 Este proyecto está bajo la Licencia CREATIVE COMMONS cc Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) - mira [LICENSE](https://creativecommons.org/licenses/by-nc-nd/4.0/) para detalles
+
+![CC-BY-NC-ND](/img/creative%20common.png)
 
 ## Enlace de interés :eyes:
 * Trello: [Tablero](https://trello.com/b/mpTht9Nx/lis) 📋
