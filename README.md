@@ -5,6 +5,7 @@ _El presente repositorio consta de una aplicación web que permite buscar restau
 
 ## Comenzando 🚀
 * [Manual de Usuario]()
+* [Manual de Técnico](/DOC/Manual_Tecnico.pdf)
 * [Documento](/DOC/Documento_-_Proyecto_LIS_Primera_Fase.pdf)
 * [Demo de la aplicación]()
 
