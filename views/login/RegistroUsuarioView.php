@@ -73,7 +73,7 @@
                     <a class="nav-link" href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php?c=login"><i class="fas fa-user-circle"></i> Login</a>
+                    <a class="nav-link" href="login.html"><i class="fas fa-user-circle"></i> Login</a>
                 </li>
             </ul>
 
@@ -95,10 +95,8 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title text-center my-5">
-                            <b>Inicio de sesión</b>
-                        </h5>
-                        <form action="login.php?c=login" method="post">
+                        <h5 class="card-title text-center my-5"><b>Crear Cuenta</b></h5>
+                        <form action="registro.php?c=Registrar" method="post">
                             <div class="form-group row my-2">
                                 <div class="col-md-2"></div>
 
@@ -116,7 +114,6 @@
                                 </div>
                                 <div class="col-md-2"></div>
                             </div>
-
                             <!-- Contraseña -->
                             <div class="form-group row my-2">
                                 <div class="col-md-2"></div>
@@ -136,12 +133,28 @@
                                 <div class="col-md-2"></div>
                             </div>
                             <!-- Fin contraseña -->
+                            <div class="form-group row my-2">
+                                <div class="col-md-2"></div>
 
+                                <div class="col-md-8">
+                                    <label class="sr-only" for="re-contra">Re-Contraseña</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-asterisk"></i>
+                                            </div>
+                                        </div>
+                                        <input type="password" class="form-control" id="re-contra" name="re-contra"
+                                            placeholder="Re-Password" />
+                                    </div>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
                             <div class="form-group row my-4">
                                 <div class="col-md-2"></div>
                                 <div class="col-md-8 text-center">
                                     <button type="submit" class="btn btn-primary btn-lg btn-block">
-                                        Iniciar Sesión
+                                        Registrar
                                     </button>
                                 </div>
                                 <div class="col-md-2"></div>
@@ -170,14 +183,9 @@
                                 </div>
                             </button>
                         </div>
-                        <br />
+                        <br /><br />
                         <div class="col-md-12 text-center">
-                            <a href="registro.php?c=Registrar">Registrase para crear una cuenta</a>
-                        </div>
-                        <br />
-                        <div class="col-md-12 text-center">
-                            <small>¿Se olvido de su usuario o contraseña?
-                                <a href="login.php?c=Recuperacion">click aquí</a></small>
+                            <small>¿Ya tiene una cuenta? <a href="login.php?c=login">inicie sesión</a></small>
                         </div>
                     </div>
                 </div>
