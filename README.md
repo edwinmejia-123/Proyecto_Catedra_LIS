@@ -4,7 +4,7 @@
 _El presente repositorio consta de una aplicación web que permite buscar restaurantes de diferentes categorias, además de ver la reputación de estos._
 
 ## Comenzando 🚀
-* [Manual de Usuario]()
+* [Manual de Usuario](/DOC/Manual_de_Usuario.pdf)
 * [Manual de Técnico](/DOC/Manual_Tecnico.pdf)
 * [Documento](/DOC/Documento_-_Proyecto_LIS_Primera_Fase.pdf)
 
