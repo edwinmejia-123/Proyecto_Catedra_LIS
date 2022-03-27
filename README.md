@@ -42,4 +42,4 @@ Este proyecto está bajo la Licencia CREATIVE COMMONS cc Attribution-NonCommerci
 ## Enlace de interés :eyes:
 * Trello: [Tablero](https://trello.com/b/mpTht9Nx/lis) 📋
 * Prototipos del diseño: [Imagenes](https://app.moqups.com/bRtcGa7uakrnlF85ajNuimN5paDDACk3/view/page/abb00921a)🎨
-<!--* Funcionamiento del programa: [Video]()🎥-->
+* Funcionamiento del programa: [Video](https://drive.google.com/drive/folders/1f6D7Bi3HY2hnGgPooJuXl9MpZTOgYCAN?usp=sharing)🎥
