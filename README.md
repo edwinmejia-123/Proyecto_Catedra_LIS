@@ -4,10 +4,9 @@
 _El presente repositorio consta de una aplicación web que permite buscar restaurantes de diferentes categorias, además de ver la reputación de estos._
 
 ## Comenzando 🚀
-* [Manual de Usuario]()
+* [Manual de Usuario](/DOC/Manual_de_Usuario.pdf)
 * [Manual de Técnico](/DOC/Manual_Tecnico.pdf)
 * [Documento](/DOC/Documento_-_Proyecto_LIS_Primera_Fase.pdf)
-* [Demo de la aplicación]()
 
 
 ### Pre-requisitos 📋
@@ -30,7 +29,7 @@ _El presente repositorio consta de una aplicación web que permite buscar restau
 
 * **Mejia Olmedo, Edwin Adonay** - :octocat: [edwinmejia-123](https://github.com/edwinmejia-123)
 * **Rodríguez Martínez, Víctor René** - :octocat: [Victor-Rodriguez](https://github.com/Victor-Rodriguez)
-* **Rivas Cerón, Rodrigo Fernando** - :octocat:
+* **Rivas Cerón, Rodrigo Fernando** - :octocat: [rodrigorivas99](https://github.com/rodrigorivas99)
 * **Martínez Sanabria, David Ezequiel** - :octocat: [unproyectomas](https://github.com/unproyectomas)
 * **Grande Menjivar, Willian Adonis** - :octocat: [willian1097](https://github.com/willian1097) 
 
@@ -43,4 +42,4 @@ Este proyecto está bajo la Licencia CREATIVE COMMONS cc Attribution-NonCommerci
 ## Enlace de interés :eyes:
 * Trello: [Tablero](https://trello.com/b/mpTht9Nx/lis) 📋
 * Prototipos del diseño: [Imagenes](https://app.moqups.com/bRtcGa7uakrnlF85ajNuimN5paDDACk3/view/page/abb00921a)🎨
-* Funcionamiento del programa: [Video]()🎥
+* Funcionamiento del programa: [Video](https://drive.google.com/drive/folders/1f6D7Bi3HY2hnGgPooJuXl9MpZTOgYCAN?usp=sharing)🎥
