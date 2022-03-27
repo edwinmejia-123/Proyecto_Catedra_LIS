@@ -242,7 +242,17 @@
             <hr class="clearfix w-100 d-md-none pb-3" />
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">
-                © 2022 Copyright | <span class="footer-text">Clothing Store</span>
+                <div class="footer-copyright text-center py-3">
+                    <!-- Inicio Licencia -->
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+                    </a>
+                    <br />
+                    <br>
+                    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">RestaurantTravel</span> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Edwin Mejía | Víctor Rodríguez | David Martínez | Willian Grande | Rodrigo Rivas</span>
+                    <br> se distribuye bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Licencia Creative Commons Atribución-NoComercial-SinDerivadas 4.0 Internacional</a>
+                    <!-- Fin Licencia -->
+                </div>
             </div>
         </div>
     </section>
