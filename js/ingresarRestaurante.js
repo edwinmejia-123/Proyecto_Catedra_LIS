@@ -4,7 +4,7 @@ let redes_sociales = document.querySelector('#redes_sociales');
 let eliminar_redes_sociales = document.querySelectorAll('#eliminar_red_social');
 let txb_red_social = document.querySelector('#red_social');
 agregar.addEventListener('click',()=>{
-  mostrar_redes.innerHTML +=`<div class="input-group">
+  mostrar_redes.innerHTML +=`<div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <p class="input-group-text">${redes_sociales.options[redes_sociales.selectedIndex].value}</p>
                             </div>
