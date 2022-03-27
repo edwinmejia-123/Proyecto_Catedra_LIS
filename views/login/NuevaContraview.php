@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/imagen.css" />
+    <link href="css/album.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/estilo_index.css">
+    <link rel="stylesheet" href="css/style-slider.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/font-icon.js"></script>
-    <title>Clothing Store</title>
+    <title>RestaurantTravel | Nueva Contraseña</title>
     <style>
     .bd-placeholder-img {
         font-size: 1.125rem;
@@ -33,10 +36,9 @@
 </head>
 
 <body>
-    <!-- MENU -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <!-- LOGO -->
-        <!-- Se muestra solo en pantallas pequeñas a la izquierda del menu -->
+        <!-- Se muestra solo en pantallas pequeÃ±as a la izquierda del menu -->
         <div class="d-block d-sm-none d-sm-block d-md-block d-lg-none">
             <img src="img/clothing-store-logo5.png" class="d-inline-block align-top" alt="logo" width="75px" />
         </div>
@@ -52,10 +54,11 @@
                     <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="productos.html"><i class="fas fa-hard-hat"></i> Lista restaurantes</a>
+                    <a class="nav-link" href="Lista_restaurantes.html"><i class="fas fa-hard-hat"></i> Lista
+                        restaurantes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="carrito-detalle.html"><i class="far fa-heart"></i> Favoritos</a>
+                    <a class="nav-link" href="favoritos.html"><i class="far fa-heart"></i> Favoritos</a>
                 </li>
             </ul>
             <!-- LOGO -->
@@ -73,118 +76,71 @@
                     <a class="nav-link" href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php?c=login"><i class="fas fa-user-circle"></i> Login</a>
+                    <a class="nav-link" href="login.html"><i class="fas fa-user-circle"></i> Login</a>
                 </li>
             </ul>
 
             <!-- BUSCADOR -->
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" />
-                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">
-                    Buscar
-                </button>
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Buscar</button>
             </form>
         </div>
     </nav>
-    <!-- FIN MENU -->
-    <hr />
-    <!-- Contenido -->
+    <hr>
+
+    <!-- Formulario de recuperación usuario y contraseña -->
     <div class="container py-5">
         <div class="row">
-            <div class="col-md-3"></div>
+            <div class="col-md-3">
+            </div>
+
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title text-center my-5">
-                            <b>Inicio de sesión</b>
-                        </h5>
-                        <form action="login.php?c=login" method="post">
-                            <div class="form-group row my-2">
-                                <div class="col-md-2"></div>
-
-                                <div class="col-md-8">
-                                    <label class="sr-only" for="user">Username</label>
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">
-                                                <i class="fas fa-user-alt"></i>
-                                            </div>
-                                        </div>
-                                        <input type="text" class="form-control" id="user" name="user"
-                                            placeholder="Username" />
+                        <h3 class="text-center">Escriba su nueva contraseña</h3>
+                        <form action="" method="post" class="py-4">
+                            <div class="form-group">
+                                <label for="emailUsuario">Nueva contraseña</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="">
+                                            <li class="fa fab-solid fa-asterisk"></li>
+                                        </span>
                                     </div>
+                                    <input type="password" name="nuevaContra" id="nuevaContra" class="form-control"
+                                        placeholder="Contraseña" required>
                                 </div>
-                                <div class="col-md-2"></div>
                             </div>
 
-                            <!-- Contraseña -->
-                            <div class="form-group row my-2">
-                                <div class="col-md-2"></div>
-
-                                <div class="col-md-8">
-                                    <label class="sr-only" for="contra">Contraseña</label>
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">
-                                                <i class="fa fa-asterisk"></i>
-                                            </div>
-                                        </div>
-                                        <input type="password" class="form-control" id="contra" name="contra"
-                                            placeholder="Password" />
+                            <div class="form-group">
+                                <label for="emailUsuario">Re-Nueva contraseña</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="">
+                                            <li class="fa fab-solid fa-asterisk"></li>
+                                        </span>
                                     </div>
+                                    <input type="password" name="reNuevaContra" id="reNuevaContra" class="form-control"
+                                        placeholder="Repetir contraseña" required>
                                 </div>
-                                <div class="col-md-2"></div>
                             </div>
-                            <!-- Fin contraseña -->
 
-                            <div class="form-group row my-4">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8 text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg btn-block">
-                                        Iniciar Sesión
-                                    </button>
-                                </div>
-                                <div class="col-md-2"></div>
+                            <div class="form-group d-flex justify-content-center btn-lg">
+                                <input type="submit" name="btnContinuar" id="btnContinuar"
+                                    class="btn btn-primary btn-lg" value="Continuar">
                             </div>
                         </form>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <hr />
-                            </div>
-                            <div class="col-md-2 text-center">Ó</div>
-                            <div class="col-md-5">
-                                <hr />
-                            </div>
-                        </div>
-                        <br />
-                        <div class="col-md-12 text-center">
-                            <button type="button" class="btn btn-outline-dark btn-lg">
-                                <div class="row text-center">
-                                    <div class="col-md-2">
-                                        <i class="fab fa-google col-md-2"></i>
-                                    </div>
-
-                                    <div class="col-md-10">
-                                        <small>Continuar con Google</small>
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                        <br />
-                        <div class="col-md-12 text-center">
-                            <a href="registro.php?c=Registrar">Registrase para crear una cuenta</a>
-                        </div>
-                        <br />
-                        <div class="col-md-12 text-center">
-                            <small>¿Se olvido de su usuario o contraseña?
-                                <a href="login.php?c=Recuperacion">click aquí</a></small>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3"></div>
+
+            <div class="col-md-3">
+            </div>
         </div>
     </div>
+    <!-- Fin formulario -->
+
     <!-- FOOTER -->
     <!-- Page Content -->
     <section class="py-5 footer">
@@ -232,10 +188,12 @@
             <hr class="clearfix w-100 d-md-none pb-3" />
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">
-                © 2020 Copyright | <span class="footer-text">Clothing Store</span>
+                © 2022 Copyright | <span class="footer-text">Clothing Store</span>
             </div>
         </div>
     </section>
+
+
 </body>
 
 </html>
