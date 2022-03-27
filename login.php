@@ -15,6 +15,10 @@
             call_user_func(array($controlador,$action));
         }elseif($action == "Registro"){
             call_user_func(array($controlador,$action));
+        }elseif($action == "Recuperacion"){
+            call_user_func(array($controlador,$action));
+        }elseif($action == "Nueva_Contra"){
+            call_user_func(array($controlador,$action));
         }else{
             $controlador->index();
         }

@@ -76,7 +76,7 @@
                     <a class="nav-link" href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
                 </li>
                 <?php
-                if ($_SESSION['inicio']==true) {
+                if (isset($_SESSION['inicio'])) {
                 ?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"

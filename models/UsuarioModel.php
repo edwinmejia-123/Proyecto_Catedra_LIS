@@ -28,6 +28,16 @@
             }
             return false;
         }
+        
+        public function Buscar_Usuario_id($id){
+            
+            $consulta = $this->db->query("SELECT * FROM usuario WHERE id_cliente='$id'");
+            $this->usuarios=$consulta->fetch_assoc();
+            if(isset($this->usuarios)){
+                return true;
+            }
+            return false;
+        }
 
         public function Insertar_Usuario(Usuario $user){
             $sql = "INSERT INTO usuario (nombre_usuario,contra) VALUES ('$user->nombre_usuario','$user->contra')";
@@ -48,6 +58,16 @@
                 return true;
             }
             return false;
+        }
+
+        public function editar_contra($id)
+        {
+            $sql = "UPDATE usuario SET contra='$this->contra' WHERE id_cliente='$id'";
+            if($consulta = $this->db->query($sql)){
+                return true;
+            }
+            return false;
+            
         }
 
         public function get_usuarios(){

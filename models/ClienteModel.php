@@ -53,7 +53,7 @@
             $consulta = $this->db->query("SELECT * FROM cliente WHERE id_cliente = '$id_cliente' && token='$token'");
             $fila = $consulta->fetch_assoc();
             if(isset($fila)){
-                $sql = "UPDATE Cliente SET confirmacion=true";
+                $sql = "UPDATE Cliente SET confirmacion=true WHERE id_cliente ='$id_cliente'";
                 $consulta = $this->db->query($sql);
                 return true;
 
@@ -68,7 +68,16 @@
             $fila = $consulta->fetch_assoc();
             $this->confirmacion = $fila['confirmacion'];
         }
+        
 
+        public function editar_token($id)
+        {
+            $sql = "UPDATE cliente SET token='$this->token' WHERE id_cliente='$id'";
+            if($consulta = $this->db->query($sql)){
+                return true;
+            }
+            return false;
+        }
 
 
         public function get_id_cliente()

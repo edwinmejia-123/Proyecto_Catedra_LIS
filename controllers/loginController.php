@@ -21,6 +21,7 @@
                     $contra = $_POST['contra'];
                     $contraseña=hash("sha256", "".$contra."");
                     if($users->Buscar_Usuario($usuario,$contraseña)){
+                        unset($_SESSION['id_cliente'],$_SESSION['email']);
                         $_SESSION['usuario']= $usuario;
                         $_SESSION['inicio']= true;
                         $_SESSION['id_cliente'];
@@ -164,6 +165,14 @@
                     }
                 }
                 include_once("views/login/Ingreso_token.php");
+            }elseif(isset($_SESSION['recuperacion'])){
+                if(isset($_POST['token'])){
+                    if($cliente->buscar_token($_SESSION['id_cliente'],$_POST['token'])){
+                        unset($_SESSION['recuperacion']);
+                        header("Location: login.php?c=Nueva_Contra");
+                    }
+                }
+                include_once("views/login/Ingreso_token.php");
             }else{
                 header('location: index.php');
             }
@@ -174,7 +183,7 @@
         {
             $usuario= new Usuario();
             session_start();
-            if(!isset($_SESSION['usuario'], $_SESSION['inicio'])){echo "hola";
+            if(!isset($_SESSION['usuario'], $_SESSION['inicio'])){
                 if(isset($_POST['user'],$_POST['contra'],$_POST['re-contra'])){
                     unset($usuario->error);
                     $usuario->set_nombre_usuario($_POST['user']);
@@ -196,6 +205,84 @@
                 header("Location: index.php");
             }
             
+        }
+
+        public function Recuperacion(){
+            $usuarios= new Usuario();
+            $cliente= new Cliente();
+            session_start();
+            if(!isset($_SESSION['usuario'], $_SESSION['inicio'])){//Si esta vacio
+                
+                if(isset($_POST['emailUsuario'])){
+                    $cliente->buscar_cliente($_POST['emailUsuario']);
+                    $id= $cliente->get_id_cliente();
+                    if(isset($id)){
+                        $usuarios->Buscar_Usuario_id($id);
+                        
+                        $cliente->set_token(hash("sha256",rand(0,1000)));
+                        $token= $cliente->get_token();
+                        $nombre = $usuarios->get_usuarios()['nombre_usuario'];
+                        //funcion de modificar token
+                        if($cliente->editar_token($id)){
+                            $to =$_POST['emailUsuario'];
+                            $subject= 'Recuperacion Restaurant Travel';
+                            $message='
+                            Buen dia usuario de Restaurant Travel, al parecer has olvidado tu contraseña o usuario.
+
+                            Ingresa el siguiente codigo " '.$token.' " para poder cambiar tu contraseña, si solo necesitas el usuario es el siguiente: "'.$nombre.'"
+                            ';
+                            $headers='From: restaurant.travel2022@gmail.com';
+                            if(mail($to,$subject,$message,$headers)){
+                                $_SESSION['recuperacion']=true;
+                                $_SESSION['id_cliente']=$id;
+                                $_SESSION['email']=$to;
+                                //hay que borrar ambas
+                                header('Location: registro.php?c=Validar_Token');
+                            }
+                            
+                            
+                        }
+                        
+                    }
+                    
+                    
+                }
+                require_once("views/login/RecuperacionUsuarioView.php");
+            }
+
+        }
+
+        public function Nueva_Contra()
+        {
+            $usuarios= new Usuario();
+            $cliente= new Cliente();
+            session_start();
+            if(!isset($_SESSION['usuario'], $_SESSION['inicio'])){//Si esta vacio
+                
+                if(isset($_POST['nuevaContra'],$_POST['reNuevaContra'])){
+                    unset($usuarios->error);
+                    $usuarios->set_contra($_POST['nuevaContra']);
+                    $re_contra=$_POST['reNuevaContra'];
+                    if($usuarios->comparar_contra($usuarios,$re_contra)){
+                        if(!isset($usuarios->error)){
+                            if($usuarios->editar_contra($_SESSION['id_cliente'])){
+                                $to =$_SESSION['email'];
+                                $subject= 'Recuperacion Restaurant Travel';
+                                $message='
+                                Buen dia usuario de Restaurant Travel, al parecer has cambiado tu contraseña, intenta ingresar a tu cuenta ahora';
+                                $headers='From: restaurant.travel2022@gmail.com';
+                                if(mail($to,$subject,$message,$headers)){
+                                    unset($_SESSION['id_cliente'],$_SESSION['email']);
+                                    header('Location: login.php?c=login');
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                require_once("views/login/NuevaContraview.php");
+            }
+
         }
     }
 ?>
