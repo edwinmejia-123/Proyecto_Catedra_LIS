@@ -7,7 +7,7 @@ class Conectar{
      $this->host="localhost";
      $this->user="root";
      $this->pass="";
-     $this->database="tripadivisor";
+     $this->database="tripadvisor";
      $this->port="3306";
     }
 

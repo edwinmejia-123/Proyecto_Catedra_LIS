@@ -9,7 +9,7 @@
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/font-icon.js"></script>
-    <title>RestaurantTravel | Login</title>
+    <title>RestaurantTravel | Crear Cuenta</title>
     <style>
     .bd-placeholder-img {
         font-size: 1.125rem;
@@ -73,7 +73,7 @@
                     <a class="nav-link" href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php?c=login"><i class="fas fa-user-circle"></i> Login</a>
+                    <a class="nav-link" href="login.html"><i class="fas fa-user-circle"></i> Login</a>
                 </li>
             </ul>
 
@@ -95,10 +95,8 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title text-center my-5">
-                            <b>Inicio de sesión</b>
-                        </h5>
-                        <form action="login.php?c=login" method="post">
+                        <h5 class="card-title text-center my-5"><b>Crear Cuenta</b></h5>
+                        <form action="registro.php?c=Registrar" method="post">
                             <div class="form-group row my-2">
                                 <div class="col-md-2"></div>
 
@@ -116,7 +114,6 @@
                                 </div>
                                 <div class="col-md-2"></div>
                             </div>
-
                             <!-- Contraseña -->
                             <div class="form-group row my-2">
                                 <div class="col-md-2"></div>
@@ -136,12 +133,28 @@
                                 <div class="col-md-2"></div>
                             </div>
                             <!-- Fin contraseña -->
+                            <div class="form-group row my-2">
+                                <div class="col-md-2"></div>
 
+                                <div class="col-md-8">
+                                    <label class="sr-only" for="re-contra">Re-Contraseña</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-asterisk"></i>
+                                            </div>
+                                        </div>
+                                        <input type="password" class="form-control" id="re-contra" name="re-contra"
+                                            placeholder="Re-Password" />
+                                    </div>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
                             <div class="form-group row my-4">
                                 <div class="col-md-2"></div>
                                 <div class="col-md-8 text-center">
                                     <button type="submit" class="btn btn-primary btn-lg btn-block">
-                                        Iniciar Sesión
+                                        Registrar
                                     </button>
                                 </div>
                                 <div class="col-md-2"></div>
@@ -170,14 +183,9 @@
                                 </div>
                             </button>
                         </div>
-                        <br />
+                        <br /><br />
                         <div class="col-md-12 text-center">
-                            <a href="registro.php?c=Registrar">Registrase para crear una cuenta</a>
-                        </div>
-                        <br />
-                        <div class="col-md-12 text-center">
-                            <small>¿Se olvido de su usuario o contraseña?
-                                <a href="login.php?c=Recuperacion">click aquí</a></small>
+                            <small>¿Ya tiene una cuenta? <a href="login.php?c=login">inicie sesión</a></small>
                         </div>
                     </div>
                 </div>
@@ -232,15 +240,17 @@
             <hr class="clearfix w-100 d-md-none pb-3" />
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">
-                <!-- Inicio Licencia -->
-                <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
-                    <img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
-                </a>
-                <br />
-                <br>
-                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">RestaurantTravel</span> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Edwin Mejía | Víctor Rodríguez | David Martínez | Willian Grande | Rodrigo Rivas</span>
-                <br> se distribuye bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Licencia Creative Commons Atribución-NoComercial-SinDerivadas 4.0 Internacional</a>
-                <!-- Fin Licencia -->
+                <div class="footer-copyright text-center py-3">
+                    <!-- Inicio Licencia -->
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+                        <img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+                    </a>
+                    <br />
+                    <br>
+                    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">RestaurantTravel</span> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Edwin Mejía | Víctor Rodríguez | David Martínez | Willian Grande | Rodrigo Rivas</span>
+                    <br> se distribuye bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Licencia Creative Commons Atribución-NoComercial-SinDerivadas 4.0 Internacional</a>
+                    <!-- Fin Licencia -->
+                </div>
             </div>
         </div>
     </section>
